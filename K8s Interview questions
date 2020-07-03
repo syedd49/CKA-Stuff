@@ -1,0 +1,114 @@
+1. Define Kubernetes.
+
+Kubernetes is much more than a containerization platform. It automates the tasks of deploying, scaling, and load-balancing of applications. Also, this multi-container management tool works well with most cloud providers and benefits from the contributions of an adept open-source community. Kubernetes is written in Go programming languages. 
+
+2. List some key features of Kubernetes.
+
+Automated scheduling – Advanced scheduler to launch containers on cluster nodes.
+Self-healing – Can reschedule, replace, and restart containers that have died.
+Automated rollouts and rollback – Supports rollouts and rollbacks. 
+Horizontal scaling – Capabilities of scaling applications up or down as per requirements.
+List the differences between Kubernetes and Docker Swarms. 
+Docker Swarm is a tool for building containers for their lifecycle management. Kubernetes is more extensive than Docker Swarm as it is meant to orchestrate clusters and coordinate clusters of nodes at scale. Even though Kubernetes is highly scalable, Docker Swarm is about five times faster to scale than Kubernetes. Also, Docker Swarm does automatic load balancing of traffic between different containers, for which manual intervention is needed in Kubernetes. 
+
+But, Kubernetes has other capabilities. It has in-built logging and monitoring tools along with an auto rollback mechanism. Docker Swarm cannot do automatic rollbacks and auto-scale like Kubernetes. 
+
+4. How does application deployment on hosts differ from deployment on containers?
+
+When you deploy an application on hosts, the kernel of the operating system allows many libraries to be installed on it. All the applications share the various libraries present on that operating system. However, the architecture of deploying applications on containers is a bit different.
+
+In the containerized architecture, the kernel is the only thing common between the applications. Other applications cannot encroach upon the libraries and binaries needed by one application. So, they exist in isolation from the rest of the system. For example, if a particular application requires Python, then only that application will get access to it. 
+
+5. What do you understand by container orchestration? Why do you need it?
+
+Suppose that there are 4-5 microservices for an application. Now, these microservices would be in individual containers. So, container orchestration would be required to allow the services to communicate with one another and work together to fulfill the server’s needs. The process is just like a musical orchestra where different instruments are played in harmony to make up a composition.
+
+6. What is Kubelet?
+
+Kubelet is an agent service that runs pods. A pod is nothing but a group of containers deployed on the same host or having some common resources, such as a single IP, volumes, etc. The kubelet works on the descriptions of these containers provided in the PodSpec. Its primary purpose is to run on each node, ensure that the containers are healthy and running, and further enable communication between master and worker nodes.
+
+Read: Full Stack Interview Questions and Answers
+
+7. What is the role of clusters in Kubernetes?
+
+Kubernetes allows you to enforce the required state management by feeding cluster services of a specific configuration. Then, these cluster services run that configuration in the infrastructure. The following steps are involved in the process:
+
+The deployment file contains all the configurations to be fed into the cluster services.
+The deployment file is fed into the API.
+Now, the cluster services schedule the pods in the environment
+Cluster services also ensure that the right number of pods are running
+So, the Kubernetes cluster is essentially made up of the API, the worker nodes, and the Kubelet process of the nodes.
+
+8. What is Kubectl used for?
+
+Kubectl is a tool for controlling Kubernetes clusters. In fact, “ctl” stands for control. It is a command-line interface that allows you to pass commands to the cluster and manage the Kubernetes component. 
+
+9. Define Google Container Engine.
+
+Google Container Engine (GKE) is a management platform that supports Docker containers and clusters that run within Google’s public cloud services. It is an open-source engine based on Kubernetes.
+
+10. Explain the usage of nodes in Kubernetes.
+
+A node provides the necessary services to run pods. Also known as minions, nodes can run on a physical or virtual machine depending upon the cluster. In Kubernetes, a node is the main worker machine, and master components manage each node in the system. 
+
+Now that you are up-to-date on the basics let’s look at a few more Kubernetes interview questions and answers to gain clarity.
+
+11. What are the two main components of the Kubernetes architecture?
+
+The master node and the worker node make up the Kubernetes architecture. Both components have multiple in-built services within them. For example, the master component has the kube-controller-manager, kube-scheduler, etcd, and kube-apiserver. The worker node has services like container runtime, kubelet, and kube-proxy running on each node. 
+
+Read: React Interview Questions & Answers
+
+12. Define kube-apiserver and kube-scheduler.
+
+Kube-apiserver is the front-end of the maser node control panel that exposes all the component APIs. It establishes communication between Kubernetes nodes and master components. The kube-scheduler manages the workload of the worker nodes. It keeps track of resource utilization to ensure that the scheduling is done on suitable nodes.
+
+13. Briefly explain the role of the Kubernetes Controller Manager.
+
+In Kubernetes, various processes are running on the master node, and they are compiled together in the form of the Kubernetes Controller Manager. It is a daemon that embeds controllers, including the following:
+
+Node Controller: Manages the status, i.e., creating, updating and deleting nodes 
+Replication Controller: Maintains pods for every replication object
+Service account and token controller: Concerned with the default accounts and API access tokens for new namespaces
+Endpoint controller: Looks after the endpoint objects (pods and services)
+What does a cloud controller manager do? 
+A Cloud Controller Manager (CCM) is a daemon that allows for embedding cloud-specific control loops. It abstracts the cloud-specific vendor code from the core Kubernetes code. It also helps manage communication with underlying cloud services. Its design is based on the plugin mechanism, meaning that cloud vendors integrate their code with the CCM using plugins. 
+
+15. What is the role of a load balancer?
+
+A load balancer provides a standard way to distribute network traffic among different backend services, thus maximizing scalability. Depending on the working environment, there can be two types of load balancer – Internal or External.
+
+The Internal Load Balancer can automatically balance the load and allocate the required configuration to the pods. On the other hand, the External Load Balancer guides the external load traffic to the backend pods. In Kubernetes, the two load balancing methods operate through the kube-proxy feature. 
+
+16. How can you run Kubernetes locally?
+
+You can run Kubernetes locally using the Minikube tool. It runs a single-node cluster inside a virtual machine on your laptop. So, it provides an efficient way for users who are just getting started and want to try out Kubernetes.
+
+17. What is Heapster?
+
+Heapster is a performance monitoring and metrics collection tool supported natively on the Kubernetes cluster. It runs like any other pod in the cluster, discovering all nodes and querying information from Kubernetes nodes. This container management tool works via an on-machine agent. 
+
+18. What is ETCD in Kubernetes?
+
+Etcd is a store for the configuration, state, and metadata of Kubernetes clusters. It is written in Go programming language and represents the cluster state at a given point in time. This datastore serves as the backbone of distributed systems. 
+
+19. What do you understand by container resource monitoring?
+
+From the user perspective, it is vital to understand resource utilization at different abstraction layers and levels, like container pods, services, and the entire cluster. Each level can be monitored using various tools, namely:
+
+Grafana
+Heapster
+InfluxDB
+CAdvisor
+Prometheus
+How can you ensure the security of your environment while using Kubernetes?
+You can follow and implement the following security measures while using Kubernetes:
+
+Restrict ETCD access
+Limit direct access to nodes
+Define resource quota
+Everything should be logged on the production environment
+Use images from the authorized repository
+Create strict rules and policies for resources
+Conduct continuous security and vulnerability scanning
+Apply security updates regularly
